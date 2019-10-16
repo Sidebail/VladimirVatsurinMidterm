@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VladimirVatsurinMidterm</string>
+    <string name="str_FNHint">First Name</string>
+    <string name="str_LastName">Last Name</string>
+    <string name="str_Order">Order</string>
+    <string name="str_ViewAll">View All</string>
+    <string name="str_Reset" />
+    <string name="str_NewReset">Reset</string>
+</resources>

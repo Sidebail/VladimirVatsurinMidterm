@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "734797089989",
+    "firebase_url": "https://vladimirvatsurinmidtermdb.firebaseio.com",
+    "project_id": "vladimirvatsurinmidtermdb",
+    "storage_bucket": "vladimirvatsurinmidtermdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734797089989:android:a6dbdef36f9add23a474ac",
+        "android_client_info": {
+          "package_name": "com.tfg.vladimirvatsurinmidterm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734797089989-1jrl5gs02214l5nv9h2rsbq1c0s618ua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1vMLOy-w1ZXpA_t86F7fiGX1fG1QhD14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734797089989-1jrl5gs02214l5nv9h2rsbq1c0s618ua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

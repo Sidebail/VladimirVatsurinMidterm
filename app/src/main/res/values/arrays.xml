@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strAr_PizzaTypes">
+        <item name="Cheese">Cheese</item>
+        <item name="Veggie">Veggie</item>
+        <item name="Meat">Meat</item>
+    </string-array>
+
+    <string-array name="strAr_PizzaChoices">
+        <item name="Small">Small</item>
+        <item name="Medium">Medium</item>
+        <item name="Large">Large</item>
+    </string-array>
+
+    <string-array name="strAr_PizzaQuantity">
+        <item name="one">1</item>
+        <item name="two">2</item>
+        <item name="three">3</item>
+        <item name="four">4</item>
+        <item name="five">5</item>
+    </string-array>
+</resources>

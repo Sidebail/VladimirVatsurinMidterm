@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_FName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:ems="10"
+        android:hint="@string/str_FNHint"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/et_LName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_LName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/str_LastName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/sp_Type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_FName" />
+
+    <Spinner
+        android:id="@+id/sp_Type"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="31dp"
+        android:entries="@array/strAr_PizzaTypes"
+        app:layout_constraintBottom_toTopOf="@+id/sp_Choice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_LName" />
+
+    <Spinner
+        android:id="@+id/sp_Choice"
+        android:layout_width="207dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/strAr_PizzaChoices"
+        app:layout_constraintBottom_toTopOf="@+id/sp_Quantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_Type" />
+
+    <Spinner
+        android:id="@+id/sp_Quantity"
+        android:layout_width="207dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="9dp"
+        android:entries="@array/strAr_PizzaQuantity"
+        app:layout_constraintBottom_toTopOf="@+id/b_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_Choice" />
+
+    <Button
+        android:id="@+id/b_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:background="@color/colorAccent"
+        android:text="@string/str_Order"
+        app:layout_constraintBottom_toTopOf="@+id/b_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_Quantity" />
+
+    <Button
+        android:id="@+id/b_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorAccent"
+        android:text="@string/str_ViewAll"
+        app:layout_constraintBottom_toTopOf="@+id/b_reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_order" />
+
+    <Button
+        android:id="@+id/b_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="98dp"
+        android:background="@color/colorAccent"
+        android:text="@string/str_NewReset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_view" />
+</androidx.constraintlayout.widget.ConstraintLayout>
