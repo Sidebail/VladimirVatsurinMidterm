@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     total
                 );
                 tbl.document(order.id).set(order);
-                Toast.makeText(this, "Order is placed! Your total is $$total", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Order is placed! Your total is $$total", Toast.LENGTH_SHORT).show();
             }
         }
 
