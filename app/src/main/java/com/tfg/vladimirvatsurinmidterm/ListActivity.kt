@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
@@ -13,12 +15,16 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.item_order.*
 
 class ListActivity : AppCompatActivity() {
 
     var db = FirebaseFirestore.getInstance();
 
     private var orderList = mutableListOf<Order>();
+
+    var chosenOrder = Order();
+    var chosenLayout:LinearLayout? = null;
 
     private var adapter: OrderAdapter? = null;
 
@@ -35,6 +41,13 @@ class ListActivity : AppCompatActivity() {
         adapter = OrderAdapter(options);
 
         rv_List.adapter = adapter
+
+        b_delete.setOnClickListener {
+            db.collection("orders").document(chosenOrder.id).delete()
+            b_delete.isVisible = false
+            chosenLayout = null
+            chosenOrder = Order()
+        }
     }
 
     override fun onStart() {
@@ -71,7 +84,25 @@ class ListActivity : AppCompatActivity() {
             p0.itemView.findViewById<TextView>(R.id.tv_Quantity).text = "Quantity: " +  p2.quantity;
             p0.itemView.findViewById<TextView>(R.id.tv_Total).text = "Total: $" + p2.total;
 
-
+            p0.itemView.findViewById<LinearLayout>(R.id.ll_background).setOnClickListener {
+                p0.itemView.findViewById<LinearLayout>(R.id.ll_background).setBackgroundColor(resources.getColor(R.color.colorPrimary))
+                if(chosenLayout == null){
+                    //chosenLayout!!.setBackgroundColor(resources.getColor(R.color.colorAccent))
+                    chosenLayout = p0.itemView.findViewById<LinearLayout>(R.id.ll_background)
+                    chosenOrder = p2;
+                    b_delete.isVisible = true
+                }else if (chosenLayout == p0.itemView.findViewById<LinearLayout>(R.id.ll_background)){
+                    chosenLayout!!.setBackgroundColor(resources.getColor(R.color.colorWhite))
+                    chosenLayout = null
+                    chosenOrder = Order()
+                    b_delete.isVisible = false
+                } else {
+                    chosenLayout!!.setBackgroundColor(resources.getColor(R.color.colorWhite))
+                    chosenLayout = p0.itemView.findViewById<LinearLayout>(R.id.ll_background)
+                    chosenOrder = p2
+                    b_delete.isVisible = true
+                }
+            }
 
         }
 
